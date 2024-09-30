@@ -2,7 +2,6 @@ export class Persona {
   
   nombre: string;
   private edad: number;
-    static nombre: any;
 
   constructor(nombre: string, edad: number) {
     this.nombre = nombre;

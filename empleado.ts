@@ -9,11 +9,17 @@ export class Empleado extends Persona{
         this.salario = salario;
     }
 
+    saludar(): void {
+        console.log(`Empleado: Hola ${this.nombre}, tu edad es ${this.getEdad()} y el salario es de ${this.salario}`);
+    }
+
     trabajar(hora: number): void{
         console.log(`${this.nombre} trabaja ${hora} horas al día y gana un salario de ${this.salario}`);
     }
+    
 
 }
 
-const empleado1 = new Empleado('Heydi', 25, 3000000);
-    empleado1.trabajar(8);
+const empleado1 = new Empleado('Saray', 25, 3000000);
+    //empleado1.trabajar(8);
+    empleado1.saludar();

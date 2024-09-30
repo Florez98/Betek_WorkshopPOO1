@@ -24,11 +24,15 @@ var Empleado = /** @class */ (function (_super) {
         _this.salario = salario;
         return _this;
     }
+    Empleado.prototype.saludar = function () {
+        console.log("Empleado: Hola ".concat(this.nombre, ", tu edad es ").concat(this.getEdad(), " y el salario es de ").concat(this.salario));
+    };
     Empleado.prototype.trabajar = function (hora) {
         console.log("".concat(this.nombre, " trabaja ").concat(hora, " horas al d\u00EDa y gana un salario de ").concat(this.salario));
     };
     return Empleado;
 }(persona_1.Persona));
 exports.Empleado = Empleado;
-var empleado1 = new Empleado('Heydi', 25, 3000000);
-empleado1.trabajar(8);
+var empleado1 = new Empleado('Saray', 25, 3000000);
+//empleado1.trabajar(8);
+empleado1.saludar();

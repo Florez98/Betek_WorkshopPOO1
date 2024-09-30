@@ -7,10 +7,14 @@ class Empleado extends persona_1.Persona {
         super(nombre, edad);
         this.salario = salario;
     }
+    saludar() {
+        console.log(`Empleado: Hola ${this.nombre}, tu edad es ${this.getEdad()} y el salario es de ${this.salario}`);
+    }
     trabajar(hora) {
         console.log(`${this.nombre} trabaja ${hora} horas al día y gana un salario de ${this.salario}`);
     }
 }
 exports.Empleado = Empleado;
-const empleado1 = new Empleado('Heydi', 25, 3000000);
-empleado1.trabajar(8);
+const empleado1 = new Empleado('Saray', 25, 3000000);
+//empleado1.trabajar(8);
+empleado1.saludar();

@@ -1,11 +1,17 @@
 {
   "compilerOptions": {
-    "target": "es2016",
-    "module": "commonjs",
-    "outDir": "./",
-    "esModuleInterop": true,
-    "strict": true,
-    "skipLibCheck": true,
-    "noEmitOnError": false // Esto permite que se genere un archivo vacío si hay un error
-  }
+    "target": "ES6",                // Configura la versión de JavaScript de salida
+    "module": "commonjs",           // Configura el sistema de módulos
+    "rootDir": "./",                // Directorio raíz de tus archivos TypeScript
+    "outDir": "./dist",             // Carpeta de salida para los archivos compilados
+    "strict": true,                 // Activa todas las verificaciones estrictas de tipo
+    "esModuleInterop": true         // Permite la interoperabilidad de módulos ES6
+  },
+  "include": [
+    "./**/*.ts"                      // Incluye todos los archivos TypeScript en la carpeta actual y sus subcarpetas
+  ],
+  "exclude": [
+    "node_modules",                  // Excluye la carpeta node_modules
+    "dist"                           // Excluye la carpeta de salida
+  ]
 }

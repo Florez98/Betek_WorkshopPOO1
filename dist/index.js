@@ -1,9 +1,9 @@
 "use strict";
 // index.ts
 Object.defineProperty(exports, "__esModule", { value: true });
-var persona_1 = require("./persona");
+const persona_1 = require("./persona");
 // Crear instancias de Persona
-var personas = [
+const personas = [
     new persona_1.Persona('Heydi', 25),
     new persona_1.Persona("María", 25),
     new persona_1.Persona("Carlos", 28),
@@ -16,7 +16,7 @@ var personas = [
     new persona_1.Persona("Clara", 24)
 ];
 // Iterar sobre las instancias y llamar a los métodos
-personas.forEach(function (persona) {
+personas.forEach(persona => {
     persona.saludar(); // Invocar el método saludar de la instancia
-    console.log("Edad de ".concat(persona.nombre, ": ").concat(persona.getEdad())); // Usar la instancia para acceder a nombre y getEdad()
+    console.log(`Edad de ${persona.nombre}: ${persona.getEdad()}`); // Usar la instancia para acceder a nombre y getEdad()
 });

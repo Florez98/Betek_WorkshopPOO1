@@ -1,6 +1,8 @@
 export class Persona {
+  
   nombre: string;
-  edad: number;
+  private edad: number;
+    static nombre: any;
 
   constructor(nombre: string, edad: number) {
     this.nombre = nombre;
@@ -10,10 +12,10 @@ export class Persona {
   saludar(): void {
     console.log(`Persona: Tu nombre es ${this.nombre} y tienes ${this.edad} años`);
   }
+
+  getEdad(): number {
+    return this.edad;
+  }
 }
 
-//const personas = [
-//  new Persona('Heydi', 25)
-//];
 
-//personas.forEach(persona => persona.saludar());

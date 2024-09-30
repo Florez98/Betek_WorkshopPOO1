@@ -1,7 +1,10 @@
-import { Persona } from './persona'; // Importar la clase Persona
+// index.ts
 
-const personas: Persona[] = [
-    new Persona("Juan", 30),
+import { Persona } from './persona';
+
+// Crear instancias de Persona
+const personas = [
+    new Persona('Heydi', 25),
     new Persona("María", 25),
     new Persona("Carlos", 28),
     new Persona("Laura", 22),
@@ -13,4 +16,8 @@ const personas: Persona[] = [
     new Persona("Clara", 24)
 ];
 
-personas.forEach(persona => persona.saludar());
+// Iterar sobre las instancias y llamar a los métodos
+personas.forEach(persona => {
+    persona.saludar(); // Invocar el método saludar de la instancia
+    console.log(`Edad de ${persona.nombre}: ${persona.getEdad()}`); // Usar la instancia para acceder a nombre y getEdad()
+});

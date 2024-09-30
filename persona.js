@@ -9,10 +9,9 @@ var Persona = /** @class */ (function () {
     Persona.prototype.saludar = function () {
         console.log("Persona: Tu nombre es ".concat(this.nombre, " y tienes ").concat(this.edad, " a\u00F1os"));
     };
+    Persona.prototype.getEdad = function () {
+        return this.edad;
+    };
     return Persona;
 }());
 exports.Persona = Persona;
-//const personas = [
-//  new Persona('Heydi', 25)
-//];
-//personas.forEach(persona => persona.saludar());

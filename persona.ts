@@ -1,4 +1,4 @@
-class Persona {
+export class Persona {
   nombre: string;
   edad: number;
 
@@ -12,8 +12,8 @@ class Persona {
   }
 }
 
-const personas = [
-  new Persona('Heydi', 25)
-];
+//const personas = [
+//  new Persona('Heydi', 25)
+//];
 
-personas.forEach(persona => persona.saludar());
+//personas.forEach(persona => persona.saludar());

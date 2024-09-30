@@ -1,3 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Persona = void 0;
 var Persona = /** @class */ (function () {
     function Persona(nombre, edad) {
         this.nombre = nombre;
@@ -8,7 +11,8 @@ var Persona = /** @class */ (function () {
     };
     return Persona;
 }());
-var personas = [
-    new Persona('Heydi', 25)
-];
-personas.forEach(function (persona) { return persona.saludar(); });
+exports.Persona = Persona;
+//const personas = [
+//  new Persona('Heydi', 25)
+//];
+//personas.forEach(persona => persona.saludar());

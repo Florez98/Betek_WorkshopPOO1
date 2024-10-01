@@ -3,9 +3,38 @@ import { Empleado } from './empleado';
 import { Direccion } from './direccion';
 import { jsonPersona, creaYTranformaJson } from './util';
 import { Coche, Moto } from './vehiculo';
+import * as fs from 'fs';
+
+const data = fs.readFileSync('empleados.json', 'utf-8');
+const empleadosJSON = JSON.parse(data); 
 
 
-const direccion = [
+if (Array.isArray(empleadosJSON)) {
+    const empleados = empleadosJSON.map((empleadoData: any) => {
+        const direccion: Direccion = {
+            calle: empleadoData.direccion.calle,
+            ciudad: empleadoData.direccion.ciudad,
+            pais: empleadoData.direccion.pais
+        };
+
+        return new Empleado(
+            empleadoData.nombre,
+            empleadoData.edad,
+            empleadoData.salario,
+            direccion
+        );
+    });
+
+    empleados.forEach((empleado: Empleado) => {
+        empleado.saludar();
+        console.log(`Ciudad: ${empleado.direccion.ciudad}`);
+    });
+} else {
+    console.error("El contenido del archivo JSON no es un arreglo.");
+}
+
+
+/*const direccion = [
     { calle: 'Calle 1', ciudad: 'Bogotá', pais: 'Colombia' },
     { calle: 'Calle 2', ciudad: 'Medellín', pais: 'Colombia' },
     { calle: 'Calle 3', ciudad: 'Cali', pais: 'Colombia' },

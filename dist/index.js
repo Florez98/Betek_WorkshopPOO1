@@ -1,7 +1,50 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const persona_1 = require("./persona");
-const direccion = [
+const empleado_1 = require("./empleado");
+const fs = __importStar(require("fs"));
+const data = fs.readFileSync('empleados.json', 'utf-8');
+const empleadosJSON = JSON.parse(data);
+if (Array.isArray(empleadosJSON)) {
+    const empleados = empleadosJSON.map((empleadoData) => {
+        const direccion = {
+            calle: empleadoData.direccion.calle,
+            ciudad: empleadoData.direccion.ciudad,
+            pais: empleadoData.direccion.pais
+        };
+        return new empleado_1.Empleado(empleadoData.nombre, empleadoData.edad, empleadoData.salario, direccion);
+    });
+    empleados.forEach((empleado) => {
+        empleado.saludar();
+        console.log(`Ciudad: ${empleado.direccion.ciudad}`);
+    });
+}
+else {
+    console.error("El contenido del archivo JSON no es un arreglo.");
+}
+/*const direccion = [
     { calle: 'Calle 1', ciudad: 'Bogotá', pais: 'Colombia' },
     { calle: 'Calle 2', ciudad: 'Medellín', pais: 'Colombia' },
     { calle: 'Calle 3', ciudad: 'Cali', pais: 'Colombia' },
@@ -13,18 +56,21 @@ const direccion = [
     { calle: 'Calle 9', ciudad: 'Cúcuta', pais: 'Colombia' },
     { calle: 'Calle 10', ciudad: 'Manizales', pais: 'Colombia' },
 ];
+
 const personas = [
-    new persona_1.Persona('Heydi', 25, direccion[0]),
-    new persona_1.Persona("María", 25, direccion[1]),
-    new persona_1.Persona("Carlos", 28, direccion[2]),
-    new persona_1.Persona("Laura", 22, direccion[3]),
-    new persona_1.Persona("Pedro", 35, direccion[4]),
-    new persona_1.Persona("Ana", 27, direccion[5]),
-    new persona_1.Persona("Luis", 31, direccion[6]),
-    new persona_1.Persona("Sofía", 29, direccion[7]),
-    new persona_1.Persona("Fernando", 40, direccion[8]),
-    new persona_1.Persona("Clara", 24, direccion[9])
+    new Persona('Heydi', 25, direccion[0]),
+    new Persona("María", 25, direccion[1]),
+    new Persona("Carlos", 28, direccion[2]),
+    new Persona("Laura", 22, direccion[3]),
+    new Persona("Pedro", 35, direccion[4]),
+    new Persona("Ana", 27, direccion[5]),
+    new Persona("Luis", 31, direccion[6]),
+    new Persona("Sofía", 29, direccion[7]),
+    new Persona("Fernando", 40, direccion[8]),
+    new Persona("Clara", 24, direccion[9])
 ];
+
+
 /*personas.forEach(persona => {
     persona.saludar();
     console.log(`Edad de ${persona.nombre}: ${persona.getEdad()}`);

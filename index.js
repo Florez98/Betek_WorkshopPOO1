@@ -2,9 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var empleado_1 = require("./empleado");
 var fs = require("fs");
-var data = fs.readFileSync('empleados.json', 'utf-8'); // Asegúrate de que la ruta al archivo sea correcta
-var empleadosJSON = JSON.parse(data); // Convertir el contenido en un objeto JSON
-// Verificar si empleadosJSON es un arreglo
+var data = fs.readFileSync('empleados.json', 'utf-8');
+var empleadosJSON = JSON.parse(data);
 if (Array.isArray(empleadosJSON)) {
     var empleados = empleadosJSON.map(function (empleadoData) {
         var direccion = {
@@ -14,7 +13,6 @@ if (Array.isArray(empleadosJSON)) {
         };
         return new empleado_1.Empleado(empleadoData.nombre, empleadoData.edad, empleadoData.salario, direccion);
     });
-    // Mostrar la información de los empleados
     empleados.forEach(function (empleado) {
         empleado.saludar();
         console.log("Ciudad: ".concat(empleado.direccion.ciudad));
@@ -23,9 +21,7 @@ if (Array.isArray(empleadosJSON)) {
 else {
     console.error("El contenido del archivo JSON no es un arreglo.");
 }
-///////////////////////////////////////////////////////////
-/*
-const direccion = [
+/*const direccion = [
     { calle: 'Calle 1', ciudad: 'Bogotá', pais: 'Colombia' },
     { calle: 'Calle 2', ciudad: 'Medellín', pais: 'Colombia' },
     { calle: 'Calle 3', ciudad: 'Cali', pais: 'Colombia' },

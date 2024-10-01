@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Empleado = void 0;
 const persona_1 = require("./persona");
 class Empleado extends persona_1.Persona {
-    constructor(nombre, edad, salario) {
-        super(nombre, edad);
+    constructor(nombre, edad, salario, direccion) {
+        super(nombre, edad, direccion);
         this.salario = salario;
     }
     saludar() {
@@ -15,6 +15,6 @@ class Empleado extends persona_1.Persona {
     }
 }
 exports.Empleado = Empleado;
-const empleado1 = new Empleado('Saray', 25, 3000000);
+//const empleado1 = new Empleado('Saray', 25, 3000000, direccion);
 //empleado1.trabajar(8);
-empleado1.saludar();
+//  empleado1.saludar();

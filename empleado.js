@@ -19,8 +19,8 @@ exports.Empleado = void 0;
 var persona_1 = require("./persona");
 var Empleado = /** @class */ (function (_super) {
     __extends(Empleado, _super);
-    function Empleado(nombre, edad, salario) {
-        var _this = _super.call(this, nombre, edad) || this;
+    function Empleado(nombre, edad, salario, direccion) {
+        var _this = _super.call(this, nombre, edad, direccion) || this;
         _this.salario = salario;
         return _this;
     }
@@ -33,6 +33,6 @@ var Empleado = /** @class */ (function (_super) {
     return Empleado;
 }(persona_1.Persona));
 exports.Empleado = Empleado;
-var empleado1 = new Empleado('Saray', 25, 3000000);
+//const empleado1 = new Empleado('Saray', 25, 3000000, direccion);
 //empleado1.trabajar(8);
-empleado1.saludar();
+//  empleado1.saludar();

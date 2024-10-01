@@ -1,8 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const persona_1 = require("./persona");
-const empleado_1 = require("./empleado");
-const vehiculo_1 = require("./vehiculo");
 const direccion = [
     { calle: 'Calle 1', ciudad: 'Bogotá', pais: 'Colombia' },
     { calle: 'Calle 2', ciudad: 'Medellín', pais: 'Colombia' },
@@ -32,29 +30,37 @@ const personas = [
     console.log(`Edad de ${persona.nombre}: ${persona.getEdad()}`);
     console.log(`Ciudad: ${persona.direccion.ciudad}`);
 });
-*/
+
+
 const empleados = [
-    new empleado_1.Empleado('Heydi', 25, 3000000, direccion[0]),
-    new empleado_1.Empleado("María", 25, 2800000, direccion[1]),
-    new empleado_1.Empleado("Carlos", 28, 3500000, direccion[2]),
-    new empleado_1.Empleado("Laura", 22, 2700000, direccion[3]),
-    new empleado_1.Empleado("Pedro", 35, 4000000, direccion[4]),
-    new empleado_1.Empleado("Ana", 27, 2900000, direccion[5]),
-    new empleado_1.Empleado("Luis", 31, 3300000, direccion[6]),
-    new empleado_1.Empleado("Sofía", 29, 3100000, direccion[7]),
-    new empleado_1.Empleado("Fernando", 40, 4500000, direccion[8]),
-    new empleado_1.Empleado("Clara", 24, 2600000, direccion[9])
+    new Empleado('Heydi', 25, 3000000, direccion[0]),
+    new Empleado("María", 25, 2800000, direccion[1]),
+    new Empleado("Carlos", 28, 3500000, direccion[2]),
+    new Empleado("Laura", 22, 2700000, direccion[3]),
+    new Empleado("Pedro", 35, 4000000, direccion[4]),
+    new Empleado("Ana", 27, 2900000, direccion[5]),
+    new Empleado("Luis", 31, 3300000, direccion[6]),
+    new Empleado("Sofía", 29, 3100000, direccion[7]),
+    new Empleado("Fernando", 40, 4500000, direccion[8]),
+    new Empleado("Clara", 24, 2600000, direccion[9])
 ];
+
 /*empleados.forEach(empleados => {
     empleados.saludar();
     console.log(`Ciudad: ${empleados.direccion.ciudad}`)
 });
 */
 //creaYTranformaJson();
-const coche = new vehiculo_1.Coche();
-const moto = new vehiculo_1.Moto();
+/*const coche = new Coche();
+const moto = new Moto();
+
+
 const persona1 = personas[0];
+
 persona1.sumarVehiculo(coche);
 persona1.sumarVehiculo(moto);
+
 persona1.listaVehiculo();
+
 persona1.vehiculos.forEach(vehiculo => vehiculo.arrancar());
+*/

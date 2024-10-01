@@ -1,9 +1,31 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var persona_1 = require("./persona");
 var empleado_1 = require("./empleado");
-var vehiculo_1 = require("./vehiculo");
-var direccion = [
+var fs = require("fs");
+var data = fs.readFileSync('empleados.json', 'utf-8'); // Asegúrate de que la ruta al archivo sea correcta
+var empleadosJSON = JSON.parse(data); // Convertir el contenido en un objeto JSON
+// Verificar si empleadosJSON es un arreglo
+if (Array.isArray(empleadosJSON)) {
+    var empleados = empleadosJSON.map(function (empleadoData) {
+        var direccion = {
+            calle: empleadoData.direccion.calle,
+            ciudad: empleadoData.direccion.ciudad,
+            pais: empleadoData.direccion.pais
+        };
+        return new empleado_1.Empleado(empleadoData.nombre, empleadoData.edad, empleadoData.salario, direccion);
+    });
+    // Mostrar la información de los empleados
+    empleados.forEach(function (empleado) {
+        empleado.saludar();
+        console.log("Ciudad: ".concat(empleado.direccion.ciudad));
+    });
+}
+else {
+    console.error("El contenido del archivo JSON no es un arreglo.");
+}
+///////////////////////////////////////////////////////////
+/*
+const direccion = [
     { calle: 'Calle 1', ciudad: 'Bogotá', pais: 'Colombia' },
     { calle: 'Calle 2', ciudad: 'Medellín', pais: 'Colombia' },
     { calle: 'Calle 3', ciudad: 'Cali', pais: 'Colombia' },
@@ -15,46 +37,57 @@ var direccion = [
     { calle: 'Calle 9', ciudad: 'Cúcuta', pais: 'Colombia' },
     { calle: 'Calle 10', ciudad: 'Manizales', pais: 'Colombia' },
 ];
-var personas = [
-    new persona_1.Persona('Heydi', 25, direccion[0]),
-    new persona_1.Persona("María", 25, direccion[1]),
-    new persona_1.Persona("Carlos", 28, direccion[2]),
-    new persona_1.Persona("Laura", 22, direccion[3]),
-    new persona_1.Persona("Pedro", 35, direccion[4]),
-    new persona_1.Persona("Ana", 27, direccion[5]),
-    new persona_1.Persona("Luis", 31, direccion[6]),
-    new persona_1.Persona("Sofía", 29, direccion[7]),
-    new persona_1.Persona("Fernando", 40, direccion[8]),
-    new persona_1.Persona("Clara", 24, direccion[9])
+
+const personas = [
+    new Persona('Heydi', 25, direccion[0]),
+    new Persona("María", 25, direccion[1]),
+    new Persona("Carlos", 28, direccion[2]),
+    new Persona("Laura", 22, direccion[3]),
+    new Persona("Pedro", 35, direccion[4]),
+    new Persona("Ana", 27, direccion[5]),
+    new Persona("Luis", 31, direccion[6]),
+    new Persona("Sofía", 29, direccion[7]),
+    new Persona("Fernando", 40, direccion[8]),
+    new Persona("Clara", 24, direccion[9])
 ];
+
+
 /*personas.forEach(persona => {
     persona.saludar();
     console.log(`Edad de ${persona.nombre}: ${persona.getEdad()}`);
     console.log(`Ciudad: ${persona.direccion.ciudad}`);
 });
-*/
-var empleados = [
-    new empleado_1.Empleado('Heydi', 25, 3000000, direccion[0]),
-    new empleado_1.Empleado("María", 25, 2800000, direccion[1]),
-    new empleado_1.Empleado("Carlos", 28, 3500000, direccion[2]),
-    new empleado_1.Empleado("Laura", 22, 2700000, direccion[3]),
-    new empleado_1.Empleado("Pedro", 35, 4000000, direccion[4]),
-    new empleado_1.Empleado("Ana", 27, 2900000, direccion[5]),
-    new empleado_1.Empleado("Luis", 31, 3300000, direccion[6]),
-    new empleado_1.Empleado("Sofía", 29, 3100000, direccion[7]),
-    new empleado_1.Empleado("Fernando", 40, 4500000, direccion[8]),
-    new empleado_1.Empleado("Clara", 24, 2600000, direccion[9])
+
+
+const empleados = [
+    new Empleado('Heydi', 25, 3000000, direccion[0]),
+    new Empleado("María", 25, 2800000, direccion[1]),
+    new Empleado("Carlos", 28, 3500000, direccion[2]),
+    new Empleado("Laura", 22, 2700000, direccion[3]),
+    new Empleado("Pedro", 35, 4000000, direccion[4]),
+    new Empleado("Ana", 27, 2900000, direccion[5]),
+    new Empleado("Luis", 31, 3300000, direccion[6]),
+    new Empleado("Sofía", 29, 3100000, direccion[7]),
+    new Empleado("Fernando", 40, 4500000, direccion[8]),
+    new Empleado("Clara", 24, 2600000, direccion[9])
 ];
+
 /*empleados.forEach(empleados => {
     empleados.saludar();
     console.log(`Ciudad: ${empleados.direccion.ciudad}`)
 });
 */
 //creaYTranformaJson();
-var coche = new vehiculo_1.Coche();
-var moto = new vehiculo_1.Moto();
-var persona1 = personas[0];
+/*const coche = new Coche();
+const moto = new Moto();
+
+
+const persona1 = personas[0];
+
 persona1.sumarVehiculo(coche);
 persona1.sumarVehiculo(moto);
+
 persona1.listaVehiculo();
-persona1.vehiculos.forEach(function (vehiculo) { return vehiculo.arrancar(); });
+
+persona1.vehiculos.forEach(vehiculo => vehiculo.arrancar());
+*/

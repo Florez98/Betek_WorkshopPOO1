@@ -1,0 +1,104 @@
+[
+  
+  {
+    "nombre": "Heydi",
+    "edad": 25,
+    "salario": 3000000,
+    "direccion": {
+        "calle": "Calle 1",
+        "ciudad": "Bogotá",
+        "pais": "Colombia"
+    }
+  },
+      {
+        "nombre": "María",
+        "edad": 25,
+        "salario": 2800000,
+        "direccion": {
+          "calle": "Calle 2",
+          "ciudad": "Medellín",
+          "pais": "Colombia"
+        }
+      },
+      {
+        "nombre": "Carlos",
+        "edad": 28,
+        "salario": 3500000,
+        "direccion": {
+          "calle": "Calle 3",
+          "ciudad": "Cali",
+          "pais": "Colombia"
+        }
+      },
+      {
+        "nombre": "Laura",
+        "edad": 22,
+        "salario": 2700000,
+        "direccion": {
+          "calle": "Calle 4",
+          "ciudad": "Barranquilla",
+          "pais": "Colombia"
+        }
+      },
+      {
+        "nombre": "Pedro",
+        "edad": 35,
+        "salario": 4000000,
+        "direccion": {
+          "calle": "Calle 5",
+          "ciudad": "Cartagena",
+          "pais": "Colombia"
+        }
+      },
+      {
+        "nombre": "Ana",
+        "edad": 27,
+        "salario": 2900000,
+        "direccion": {
+          "calle": "Calle 6",
+          "ciudad": "Bucaramanga",
+          "pais": "Colombia"
+        }
+      },
+      {
+        "nombre": "Luis",
+        "edad": 31,
+        "salario": 3300000,
+        "direccion": {
+          "calle": "Calle 7",
+          "ciudad": "Pereira",
+          "pais": "Colombia"
+        }
+      },
+      {
+        "nombre": "Sofía",
+        "edad": 29,
+        "salario": 3100000,
+        "direccion": {
+          "calle": "Calle 8",
+          "ciudad": "Santa Marta",
+          "pais": "Colombia"
+        }
+      },
+      {
+        "nombre": "Fernando",
+        "edad": 40,
+        "salario": 4500000,
+        "direccion": {
+          "calle": "Calle 9",
+          "ciudad": "Cúcuta",
+          "pais": "Colombia"
+        }
+      },
+      {
+        "nombre": "Clara",
+        "edad": 24,
+        "salario": 2600000,
+        "direccion": {
+          "calle": "Calle 10",
+          "ciudad": "Manizales",
+          "pais": "Colombia"
+        }
+      }
+  
+]

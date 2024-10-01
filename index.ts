@@ -37,7 +37,7 @@ const personas = [
     console.log(`Edad de ${persona.nombre}: ${persona.getEdad()}`);
     console.log(`Ciudad: ${persona.direccion.ciudad}`);
 });
-*/
+
 
 const empleados = [
     new Empleado('Heydi', 25, 3000000, direccion[0]),
@@ -52,7 +52,6 @@ const empleados = [
     new Empleado("Clara", 24, 2600000, direccion[9])
 ];
 
-
 /*empleados.forEach(empleados => {
     empleados.saludar();
     console.log(`Ciudad: ${empleados.direccion.ciudad}`)
@@ -61,7 +60,7 @@ const empleados = [
 //creaYTranformaJson();
 
 
-const coche = new Coche();
+/*const coche = new Coche();
 const moto = new Moto();
 
 
@@ -73,3 +72,4 @@ persona1.sumarVehiculo(moto);
 persona1.listaVehiculo();
 
 persona1.vehiculos.forEach(vehiculo => vehiculo.arrancar());
+*/

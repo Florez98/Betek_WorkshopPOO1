@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var persona_1 = require("./persona");
 var empleado_1 = require("./empleado");
-var util_1 = require("./util");
+var vehiculo_1 = require("./vehiculo");
 var direccion = [
     { calle: 'Calle 1', ciudad: 'Bogotá', pais: 'Colombia' },
     { calle: 'Calle 2', ciudad: 'Medellín', pais: 'Colombia' },
@@ -50,4 +50,11 @@ var empleados = [
     console.log(`Ciudad: ${empleados.direccion.ciudad}`)
 });
 */
-(0, util_1.creaYTranformaJson)();
+//creaYTranformaJson();
+var coche = new vehiculo_1.Coche();
+var moto = new vehiculo_1.Moto();
+var persona1 = personas[0];
+persona1.sumarVehiculo(coche);
+persona1.sumarVehiculo(moto);
+persona1.listaVehiculo();
+persona1.vehiculos.forEach(function (vehiculo) { return vehiculo.arrancar(); });

@@ -2,7 +2,7 @@ import { Persona } from './persona';
 import { Empleado } from './empleado';
 import { Direccion } from './direccion';
 import { jsonPersona, creaYTranformaJson } from './util';
-
+import { Coche, Moto } from './vehiculo';
 
 
 const direccion = [
@@ -31,6 +31,7 @@ const personas = [
     new Persona("Clara", 24, direccion[9])
 ];
 
+
 /*personas.forEach(persona => {
     persona.saludar(); 
     console.log(`Edad de ${persona.nombre}: ${persona.getEdad()}`);
@@ -57,4 +58,18 @@ const empleados = [
     console.log(`Ciudad: ${empleados.direccion.ciudad}`)
 });
 */
-creaYTranformaJson();
+//creaYTranformaJson();
+
+
+const coche = new Coche();
+const moto = new Moto();
+
+
+const persona1 = personas[0];
+
+persona1.sumarVehiculo(coche);
+persona1.sumarVehiculo(moto);
+
+persona1.listaVehiculo();
+
+persona1.vehiculos.forEach(vehiculo => vehiculo.arrancar());

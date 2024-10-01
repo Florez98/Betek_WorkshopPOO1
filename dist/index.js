@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const persona_1 = require("./persona");
 const empleado_1 = require("./empleado");
-const util_1 = require("./util");
+const vehiculo_1 = require("./vehiculo");
 const direccion = [
     { calle: 'Calle 1', ciudad: 'Bogotá', pais: 'Colombia' },
     { calle: 'Calle 2', ciudad: 'Medellín', pais: 'Colombia' },
@@ -50,4 +50,11 @@ const empleados = [
     console.log(`Ciudad: ${empleados.direccion.ciudad}`)
 });
 */
-(0, util_1.creaYTranformaJson)();
+//creaYTranformaJson();
+const coche = new vehiculo_1.Coche();
+const moto = new vehiculo_1.Moto();
+const persona1 = personas[0];
+persona1.sumarVehiculo(coche);
+persona1.sumarVehiculo(moto);
+persona1.listaVehiculo();
+persona1.vehiculos.forEach(vehiculo => vehiculo.arrancar());

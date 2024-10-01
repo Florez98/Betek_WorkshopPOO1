@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var persona_1 = require("./persona");
 var empleado_1 = require("./empleado");
+var util_1 = require("./util");
 var direccion = [
     { calle: 'Calle 1', ciudad: 'Bogotá', pais: 'Colombia' },
     { calle: 'Calle 2', ciudad: 'Medellín', pais: 'Colombia' },
@@ -26,11 +27,12 @@ var personas = [
     new persona_1.Persona("Fernando", 40, direccion[8]),
     new persona_1.Persona("Clara", 24, direccion[9])
 ];
-personas.forEach(function (persona) {
+/*personas.forEach(persona => {
     persona.saludar();
-    console.log("Edad de ".concat(persona.nombre, ": ").concat(persona.getEdad()));
-    console.log("Ciudad: ".concat(persona.direccion.ciudad));
+    console.log(`Edad de ${persona.nombre}: ${persona.getEdad()}`);
+    console.log(`Ciudad: ${persona.direccion.ciudad}`);
 });
+*/
 var empleados = [
     new empleado_1.Empleado('Heydi', 25, 3000000, direccion[0]),
     new empleado_1.Empleado("María", 25, 2800000, direccion[1]),
@@ -48,3 +50,4 @@ var empleados = [
     console.log(`Ciudad: ${empleados.direccion.ciudad}`)
 });
 */
+(0, util_1.creaYTranformaJson)();

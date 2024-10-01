@@ -1,6 +1,9 @@
 import { Persona } from './persona';
 import { Empleado } from './empleado';
 import { Direccion } from './direccion';
+import { jsonPersona, creaYTranformaJson } from './util';
+
+
 
 const direccion = [
     { calle: 'Calle 1', ciudad: 'Bogotá', pais: 'Colombia' },
@@ -28,13 +31,12 @@ const personas = [
     new Persona("Clara", 24, direccion[9])
 ];
 
-personas.forEach(persona => {
+/*personas.forEach(persona => {
     persona.saludar(); 
     console.log(`Edad de ${persona.nombre}: ${persona.getEdad()}`);
     console.log(`Ciudad: ${persona.direccion.ciudad}`);
 });
-
-
+*/
 
 const empleados = [
     new Empleado('Heydi', 25, 3000000, direccion[0]),
@@ -55,3 +57,4 @@ const empleados = [
     console.log(`Ciudad: ${empleados.direccion.ciudad}`)
 });
 */
+creaYTranformaJson();

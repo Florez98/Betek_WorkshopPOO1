@@ -6,6 +6,7 @@ import { Empresa } from './empresa';
 import { jsonPersona, creaYTranformaJson } from './util';
 import { Coche, Moto } from './vehiculo';
 import * as fs from 'fs';
+import { Proyecto } from './proyecto';
 
 const data = fs.readFileSync('empleados.json', 'utf-8');
 const empleadosJSON = JSON.parse(data); 
@@ -31,7 +32,7 @@ const empleadosJSON = JSON.parse(data);
         });
 
 
-        const empresa = new Empresa('Mi Empresa');
+        /*const empresa = new Empresa('Mi Empresa');
         empleados.forEach((empleado: Empleado) => {
             empresa.agregarEmpleado(empleado);
         });
@@ -39,13 +40,29 @@ const empleadosJSON = JSON.parse(data);
         console.log(`Total de salarios de la empresa: ${empresa.calcularTotalSalarios()}`);
 
 
-        /*empleados.forEach((empleado: Empleado) => {
+        empleados.forEach((empleado: Empleado) => {
             empleado.saludar();
             console.log(`Ciudad: ${empleado.direccion.ciudad}`);
         });
     } else {
         console.error("El contenido del archivo JSON no es un arreglo.");*/
+        const empresa = new Empresa('Mi Empresa');
+
+        const proyecto1 = new Proyecto('Proyecto A', 'Descripción del Proyecto A');
+        const proyecto2 = new Proyecto('Proyecto B', 'Descripción del Proyecto B');
+        
+        empleados.forEach((empleado: Empleado) => {
+            empleado.agregarProyecto(proyecto1);
+            empleado.agregarProyecto(proyecto2);
+        });
+        
+        proyecto1.listarEmpleados();
+        proyecto2.listarEmpleados();
+        
+        empleados[0].listarProyectos();
+        
     }
+
     
 
 

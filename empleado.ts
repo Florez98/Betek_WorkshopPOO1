@@ -1,10 +1,13 @@
 import { Direccion } from "./direccion";
 import { EstadoCivil } from "./estadoCivil";
 import { Persona } from "./persona";
+import { Proyecto } from "./proyecto";
+
 
 export class Empleado extends Persona{
 
     salario: number;
+    private proyectos: Proyecto[] = [];
 
     constructor(nombre: string, edad: number, salario: number, direccion: Direccion, estadoCivil: EstadoCivil){
         super(nombre, edad, direccion, estadoCivil);
@@ -17,6 +20,23 @@ export class Empleado extends Persona{
 
     trabajar(hora: number): void{
         console.log(`${this.nombre} trabaja ${hora} horas al día y gana un salario de ${this.salario}`);
+    }
+
+    agregarProyecto(proyecto: Proyecto): void {
+        this.proyectos.push(proyecto);
+        proyecto.agregarEmpleado(this);
+    }
+
+    eliminarProyecto(proyecto: Proyecto): void {
+        this.proyectos = this.proyectos.filter(p => p !== proyecto);
+        proyecto.eliminarEmpleado(this);
+    }
+
+    listarProyectos(): void {
+        console.log(`Proyectos asignados a ${this.nombre}:`);
+        this.proyectos.forEach(proyecto => {
+            console.log(`- ${proyecto.nombre}`);
+        });
     }
     
 

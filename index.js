@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var empleado_1 = require("./empleado");
 var empresa_1 = require("./empresa");
 var fs = require("fs");
+var proyecto_1 = require("./proyecto");
 var data = fs.readFileSync('empleados.json', 'utf-8');
 var empleadosJSON = JSON.parse(data);
 if (Array.isArray(empleadosJSON)) {
@@ -15,17 +16,30 @@ if (Array.isArray(empleadosJSON)) {
         var estadoCivil = empleadoData.estadoCivil;
         return new empleado_1.Empleado(empleadoData.nombre, empleadoData.edad, empleadoData.salario, direccion, estadoCivil);
     });
-    var empresa_2 = new empresa_1.Empresa('Mi Empresa');
-    empleados.forEach(function (empleado) {
-        empresa_2.agregarEmpleado(empleado);
+    /*const empresa = new Empresa('Mi Empresa');
+    empleados.forEach((empleado: Empleado) => {
+        empresa.agregarEmpleado(empleado);
     });
-    console.log("Total de salarios de la empresa: ".concat(empresa_2.calcularTotalSalarios()));
-    /*empleados.forEach((empleado: Empleado) => {
+
+    console.log(`Total de salarios de la empresa: ${empresa.calcularTotalSalarios()}`);
+
+
+    empleados.forEach((empleado: Empleado) => {
         empleado.saludar();
         console.log(`Ciudad: ${empleado.direccion.ciudad}`);
     });
 } else {
     console.error("El contenido del archivo JSON no es un arreglo.");*/
+    var empresa = new empresa_1.Empresa('Mi Empresa');
+    var proyecto1_1 = new proyecto_1.Proyecto('Proyecto A', 'Descripción del Proyecto A');
+    var proyecto2_1 = new proyecto_1.Proyecto('Proyecto B', 'Descripción del Proyecto B');
+    empleados.forEach(function (empleado) {
+        empleado.agregarProyecto(proyecto1_1);
+        empleado.agregarProyecto(proyecto2_1);
+    });
+    proyecto1_1.listarEmpleados();
+    proyecto2_1.listarEmpleados();
+    empleados[0].listarProyectos();
 }
 var direccion = [
     { calle: 'Calle 1', ciudad: 'Bogotá', pais: 'Colombia' },

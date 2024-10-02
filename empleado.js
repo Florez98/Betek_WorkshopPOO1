@@ -21,6 +21,7 @@ var Empleado = /** @class */ (function (_super) {
     __extends(Empleado, _super);
     function Empleado(nombre, edad, salario, direccion, estadoCivil) {
         var _this = _super.call(this, nombre, edad, direccion, estadoCivil) || this;
+        _this.proyectos = [];
         _this.salario = salario;
         return _this;
     }
@@ -29,6 +30,20 @@ var Empleado = /** @class */ (function (_super) {
     };
     Empleado.prototype.trabajar = function (hora) {
         console.log("".concat(this.nombre, " trabaja ").concat(hora, " horas al d\u00EDa y gana un salario de ").concat(this.salario));
+    };
+    Empleado.prototype.agregarProyecto = function (proyecto) {
+        this.proyectos.push(proyecto);
+        proyecto.agregarEmpleado(this);
+    };
+    Empleado.prototype.eliminarProyecto = function (proyecto) {
+        this.proyectos = this.proyectos.filter(function (p) { return p !== proyecto; });
+        proyecto.eliminarEmpleado(this);
+    };
+    Empleado.prototype.listarProyectos = function () {
+        console.log("Proyectos asignados a ".concat(this.nombre, ":"));
+        this.proyectos.forEach(function (proyecto) {
+            console.log("- ".concat(proyecto.nombre));
+        });
     };
     return Empleado;
 }(persona_1.Persona));

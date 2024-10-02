@@ -5,6 +5,7 @@ const persona_1 = require("./persona");
 class Empleado extends persona_1.Persona {
     constructor(nombre, edad, salario, direccion, estadoCivil) {
         super(nombre, edad, direccion, estadoCivil);
+        this.proyectos = [];
         this.salario = salario;
     }
     saludar() {
@@ -12,6 +13,20 @@ class Empleado extends persona_1.Persona {
     }
     trabajar(hora) {
         console.log(`${this.nombre} trabaja ${hora} horas al día y gana un salario de ${this.salario}`);
+    }
+    agregarProyecto(proyecto) {
+        this.proyectos.push(proyecto);
+        proyecto.agregarEmpleado(this);
+    }
+    eliminarProyecto(proyecto) {
+        this.proyectos = this.proyectos.filter(p => p !== proyecto);
+        proyecto.eliminarEmpleado(this);
+    }
+    listarProyectos() {
+        console.log(`Proyectos asignados a ${this.nombre}:`);
+        this.proyectos.forEach(proyecto => {
+            console.log(`- ${proyecto.nombre}`);
+        });
     }
 }
 exports.Empleado = Empleado;

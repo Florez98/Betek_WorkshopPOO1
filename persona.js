@@ -1,13 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Persona = void 0;
+//import { EstadoCivil } from "./estadoCivil";
 var Persona = /** @class */ (function () {
-    function Persona(nombre, edad, direccion) {
+    function Persona(nombre, edad, direccion, estadoCivil) {
         this.vehiculos = [];
         this.nombre = nombre;
         this.edad = edad;
         this.direccion = direccion;
-        //this.vehiculos = [];
+        this.estadoCivil = estadoCivil;
+        this.vehiculos = [];
     }
     Persona.prototype.saludar = function () {
         console.log("Persona: Tu nombre es ".concat(this.nombre, " y tienes ").concat(this.edad, " a\u00F1os"));

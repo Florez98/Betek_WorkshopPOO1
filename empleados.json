@@ -8,7 +8,8 @@
         "calle": "Calle 1",
         "ciudad": "Bogotá",
         "pais": "Colombia"
-    }
+    },
+    "estadoCivil": "Soltero"
   },
       {
         "nombre": "María",
@@ -18,7 +19,8 @@
           "calle": "Calle 2",
           "ciudad": "Medellín",
           "pais": "Colombia"
-        }
+        },
+        "estadoCivil": "Casado"
       },
       {
         "nombre": "Carlos",
@@ -28,7 +30,8 @@
           "calle": "Calle 3",
           "ciudad": "Cali",
           "pais": "Colombia"
-        }
+        },
+        "estadoCivil": "Divorsiado"
       },
       {
         "nombre": "Laura",
@@ -38,7 +41,8 @@
           "calle": "Calle 4",
           "ciudad": "Barranquilla",
           "pais": "Colombia"
-        }
+        },
+        "estadoCivil": "Soltero"
       },
       {
         "nombre": "Pedro",
@@ -48,7 +52,8 @@
           "calle": "Calle 5",
           "ciudad": "Cartagena",
           "pais": "Colombia"
-        }
+        },
+        "estadoCivil": "Soltero"
       },
       {
         "nombre": "Ana",
@@ -58,7 +63,8 @@
           "calle": "Calle 6",
           "ciudad": "Bucaramanga",
           "pais": "Colombia"
-        }
+        },
+        "estadoCivil": "Divorsiado"
       },
       {
         "nombre": "Luis",
@@ -68,7 +74,8 @@
           "calle": "Calle 7",
           "ciudad": "Pereira",
           "pais": "Colombia"
-        }
+        },
+        "estadoCivil": "Casado"
       },
       {
         "nombre": "Sofía",
@@ -78,7 +85,8 @@
           "calle": "Calle 8",
           "ciudad": "Santa Marta",
           "pais": "Colombia"
-        }
+        },
+        "estadoCivil": "Soltero"
       },
       {
         "nombre": "Fernando",
@@ -88,7 +96,8 @@
           "calle": "Calle 9",
           "ciudad": "Cúcuta",
           "pais": "Colombia"
-        }
+        },
+        "estadoCivil": "Casado"
       },
       {
         "nombre": "Clara",
@@ -98,7 +107,8 @@
           "calle": "Calle 10",
           "ciudad": "Manizales",
           "pais": "Colombia"
-        }
+        },
+        "estadoCivil": "Divorsiado"
       }
   
 ]

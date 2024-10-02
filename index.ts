@@ -1,6 +1,7 @@
 import { Persona } from './persona';
 import { Empleado } from './empleado';
 import { Direccion } from './direccion';
+import { EstadoCivil } from './estadoCivil';
 import { jsonPersona, creaYTranformaJson } from './util';
 import { Coche, Moto } from './vehiculo';
 import * as fs from 'fs';
@@ -17,11 +18,14 @@ if (Array.isArray(empleadosJSON)) {
             pais: empleadoData.direccion.pais
         };
 
+        const estadoCivil = empleadoData.estadoCivil as EstadoCivil;
+        
         return new Empleado(
             empleadoData.nombre,
             empleadoData.edad,
             empleadoData.salario,
-            direccion
+            direccion,
+            estadoCivil
         );
     });
 

@@ -1,5 +1,7 @@
 import { Direccion } from "./direccion";
+import { EstadoCivil } from "./estadoCivil";
 import { Coche, Vehiculo } from "./vehiculo";
+//import { EstadoCivil } from "./estadoCivil";
 
 export class Persona {
   
@@ -7,12 +9,15 @@ export class Persona {
   private edad: number;
   direccion: Direccion;
   vehiculos: Vehiculo[] = [];
+  estadoCivil: EstadoCivil;
 
-  constructor(nombre: string, edad: number, direccion: Direccion) {
+  constructor(nombre: string, edad: number, direccion: Direccion, estadoCivil: EstadoCivil) {
     this.nombre = nombre;
     this.edad = edad;
     this.direccion = direccion;
-    //this.vehiculos = [];
+    this.estadoCivil = estadoCivil;
+    this.vehiculos = [];
+    
   }
 
   saludar(): void {

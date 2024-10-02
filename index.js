@@ -11,7 +11,8 @@ if (Array.isArray(empleadosJSON)) {
             ciudad: empleadoData.direccion.ciudad,
             pais: empleadoData.direccion.pais
         };
-        return new empleado_1.Empleado(empleadoData.nombre, empleadoData.edad, empleadoData.salario, direccion);
+        var estadoCivil = empleadoData.estadoCivil;
+        return new empleado_1.Empleado(empleadoData.nombre, empleadoData.edad, empleadoData.salario, direccion, estadoCivil);
     });
     empleados.forEach(function (empleado) {
         empleado.saludar();

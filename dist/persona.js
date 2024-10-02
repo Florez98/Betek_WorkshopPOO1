@@ -1,13 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Persona = void 0;
+//import { EstadoCivil } from "./estadoCivil";
 class Persona {
-    constructor(nombre, edad, direccion) {
+    constructor(nombre, edad, direccion, estadoCivil) {
         this.vehiculos = [];
         this.nombre = nombre;
         this.edad = edad;
         this.direccion = direccion;
-        //this.vehiculos = [];
+        this.estadoCivil = estadoCivil;
+        this.vehiculos = [];
     }
     saludar() {
         console.log(`Persona: Tu nombre es ${this.nombre} y tienes ${this.edad} años`);

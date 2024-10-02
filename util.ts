@@ -8,7 +8,7 @@ const jsonPersona = (objetoJson: any): void => {
 
     };
     
-    const persona = new Persona(objetoJson.nombre, objetoJson.edad, objetoJson.direccion);
+    const persona = new Persona(objetoJson.nombre, objetoJson.edad, objetoJson.direccion, objetoJson.estadoCivil);
     persona.saludar();
 };
 

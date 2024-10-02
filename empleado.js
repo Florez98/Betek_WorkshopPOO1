@@ -19,13 +19,13 @@ exports.Empleado = void 0;
 var persona_1 = require("./persona");
 var Empleado = /** @class */ (function (_super) {
     __extends(Empleado, _super);
-    function Empleado(nombre, edad, salario, direccion) {
-        var _this = _super.call(this, nombre, edad, direccion) || this;
+    function Empleado(nombre, edad, salario, direccion, estadoCivil) {
+        var _this = _super.call(this, nombre, edad, direccion, estadoCivil) || this;
         _this.salario = salario;
         return _this;
     }
     Empleado.prototype.saludar = function () {
-        console.log("Empleado: Hola ".concat(this.nombre, ", tu edad es ").concat(this.getEdad(), " y el salario es de ").concat(this.salario));
+        console.log("Empleado: Hola ".concat(this.nombre, ", tu edad es ").concat(this.getEdad(), ", tu estado civil es ").concat(this.estadoCivil, " y el salario es de ").concat(this.salario));
     };
     Empleado.prototype.trabajar = function (hora) {
         console.log("".concat(this.nombre, " trabaja ").concat(hora, " horas al d\u00EDa y gana un salario de ").concat(this.salario));

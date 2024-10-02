@@ -8,7 +8,7 @@ var jsonPersona = function (objetoJson) {
         ciudad: objetoJson.direccion.ciudad,
         pais: objetoJson.direccion.pais
     };
-    var persona = new persona_1.Persona(objetoJson.nombre, objetoJson.edad, objetoJson.direccion);
+    var persona = new persona_1.Persona(objetoJson.nombre, objetoJson.edad, objetoJson.direccion, objetoJson.estadoCivil);
     persona.saludar();
 };
 exports.jsonPersona = jsonPersona;

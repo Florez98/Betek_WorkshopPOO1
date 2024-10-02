@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var empleado_1 = require("./empleado");
+var empresa_1 = require("./empresa");
 var fs = require("fs");
 var data = fs.readFileSync('empleados.json', 'utf-8');
 var empleadosJSON = JSON.parse(data);
@@ -14,15 +15,19 @@ if (Array.isArray(empleadosJSON)) {
         var estadoCivil = empleadoData.estadoCivil;
         return new empleado_1.Empleado(empleadoData.nombre, empleadoData.edad, empleadoData.salario, direccion, estadoCivil);
     });
+    var empresa_2 = new empresa_1.Empresa('Mi Empresa');
     empleados.forEach(function (empleado) {
-        empleado.saludar();
-        console.log("Ciudad: ".concat(empleado.direccion.ciudad));
+        empresa_2.agregarEmpleado(empleado);
     });
+    console.log("Total de salarios de la empresa: ".concat(empresa_2.calcularTotalSalarios()));
+    /*empleados.forEach((empleado: Empleado) => {
+        empleado.saludar();
+        console.log(`Ciudad: ${empleado.direccion.ciudad}`);
+    });
+} else {
+    console.error("El contenido del archivo JSON no es un arreglo.");*/
 }
-else {
-    console.error("El contenido del archivo JSON no es un arreglo.");
-}
-/*const direccion = [
+var direccion = [
     { calle: 'Calle 1', ciudad: 'Bogotá', pais: 'Colombia' },
     { calle: 'Calle 2', ciudad: 'Medellín', pais: 'Colombia' },
     { calle: 'Calle 3', ciudad: 'Cali', pais: 'Colombia' },
@@ -34,8 +39,7 @@ else {
     { calle: 'Calle 9', ciudad: 'Cúcuta', pais: 'Colombia' },
     { calle: 'Calle 10', ciudad: 'Manizales', pais: 'Colombia' },
 ];
-
-const personas = [
+/*const personas = [
     new Persona('Heydi', 25, direccion[0]),
     new Persona("María", 25, direccion[1]),
     new Persona("Carlos", 28, direccion[2]),
@@ -49,7 +53,7 @@ const personas = [
 ];
 
 
-/*personas.forEach(persona => {
+personas.forEach(persona => {
     persona.saludar();
     console.log(`Edad de ${persona.nombre}: ${persona.getEdad()}`);
     console.log(`Ciudad: ${persona.direccion.ciudad}`);
@@ -69,13 +73,15 @@ const empleados = [
     new Empleado("Clara", 24, 2600000, direccion[9])
 ];
 
-/*empleados.forEach(empleados => {
+empleados.forEach(empleados => {
     empleados.saludar();
     console.log(`Ciudad: ${empleados.direccion.ciudad}`)
 });
-*/
-//creaYTranformaJson();
-/*const coche = new Coche();
+
+creaYTranformaJson();
+
+
+const coche = new Coche();
 const moto = new Moto();
 
 
